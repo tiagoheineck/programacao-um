@@ -32,6 +32,10 @@ public class Jogador {
 			System.out.println("Número de camisa inválido para a Copa!");
 		}
 	}
+	
+	public int getNumeroCamisa() {
+		return this.numeroCamisa;
+	}
 
 	public void marcarGol() {
 		this.golsMarcados++;

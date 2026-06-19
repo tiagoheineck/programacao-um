@@ -9,6 +9,7 @@ public class Tecnico {
 	public Tecnico(String nome, int idade, String habilidade) {
 		this.nome = nome;
 		this.idade = idade;
+		this.habilidade = habilidade;
 	}
 	
 	public String getNome() {
