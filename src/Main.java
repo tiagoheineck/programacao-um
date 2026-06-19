@@ -8,7 +8,7 @@ public class Main {
 	// encapsulamento (getters/setters), herança e polimorfismo.
 
 	public static void main(String[] args) {
-		// Criamos alguns feitiços
+		// Criamos alguns feitiços para usar nas demonstrações de polimorfismo.
 		Feitico expelliarmus = new Feitico("Expelliarmus", 50);
 		Feitico stupefy = new Feitico("Stupefy", 70);
 
