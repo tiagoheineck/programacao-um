@@ -20,8 +20,8 @@ public class SistemaDeFarm {
 // Simulação de um ciclo de farm de 5 segundos
 			double auraGanhas = calcularAura(jogador, 5);
 			jogador.adicionarAura(auraGanhas);
-			System.out.printf("[FARM PASSIVO] %s farmou %.2f unidades de Aura (Total: %.2f)%n", jogador.getNome(),
-					auraGanhas, jogador.getAuraAcumulada());
+			System.out.printf("[FARM PASSIVO] %s farmou %.2f unidades de Aura (Total: %.2f)%n A vida é legal %s", 
+					jogador.getNome(), auraGanhas, jogador.getAuraAcumulada(), "Judas");
 		} else {
 			System.out.println("[ALERTA] Processamento abortado: Jogador inelegível ou com farm desligado.");
 		}

@@ -30,44 +30,14 @@ public class Cat {
 		System.out.println("The cat is sleeping for " + hours + " hours.");
 	}
 
-	public void meow() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-		var resource = getClass().getResource("/meow.wav");
-
-		if (resource == null) {
-			System.err.println("Erro: O arquivo 'meow.wav' não foi encontrado na raiz dos recursos!");
-			return; // Cancela a execução para evitar o NullPointerException
-		}
-
-		try (var audioStream = AudioSystem.getAudioInputStream(resource)) {
-			var clip = AudioSystem.getClip();
-			clip.open(audioStream);
-			clip.start();
-
-			// Mantém a thread viva apenas o tempo necessário para o som tocar
-			Thread.sleep(clip.getMicrosecondLength() / 1000);
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-		}
+	public void meow()  {
+		var audio = new Audio();
+		audio.reproduzirSom("meow.wav");
 	}
 
-	public void fight() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-		var resource = getClass().getResource("/fight.wav");
-
-		if (resource == null) {
-			System.err.println("Erro: O arquivo 'meow.wav' não foi encontrado na raiz dos recursos!");
-			return; // Cancela a execução para evitar o NullPointerException
-		}
-
-		try (var audioStream = AudioSystem.getAudioInputStream(resource)) {
-			var clip = AudioSystem.getClip();
-			clip.open(audioStream);
-			clip.start();
-
-			// Mantém a thread viva apenas o tempo necessário para o som tocar
-			Thread.sleep(clip.getMicrosecondLength() / 1000);
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-		}
+	public void fight() {
+		Audio audio = new Audio();
+		audio.reproduzirSom("fight.wav");
 	}
 
 }
