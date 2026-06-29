@@ -1,25 +1,36 @@
 package memes;
 
+import br.ifc.edu.basico.Audio;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+
 public class MuitoBom {
 
 	public static void main(String[] args) {
-		// Códigos ANSI para cores e resetar
-        final String ANSI_RESET = "\u001B[0m";
-        final String ANSI_GOLD = "\u001B[33m"; // Amarelo/Dourado
-        final String ANSI_GREY = "\u001B[90m"; // Cinza claro/Grafite
+		// Tenta deixar a janela com o visual moderno do sistema operacional
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            // Se falhar, usa o padrão do Java
+        }
 
-        // Símbolo da estrela (Unicode)
-        final String ESTRELA = "★";
+        // Texto formatado usando HTML para aplicar as cores do meme
+        String mensagemHtml = "<html>"
+                + "<h2 style='font-family: Arial; margin-bottom: 5px;'>Muito bom</h2>"
+                + "<span style='font-size: 24px; color: #FFD700;'>★</span>" // Estrela Dourada
+                + "<span style='font-size: 24px; color: #808080;'>★★★★</span>" // 4 Estelas Cinzas
+                + "</html>";
+        
+        Audio audio = new Audio();
+        audio.reproduzirSom("fail.wav");
 
-        // Imprime a mensagem inicial
-        System.out.println("Muito bom");
-
-        // Monta a string das estrelas com cores
-        String estrelas = ANSI_GOLD + ESTRELA + ANSI_RESET +
-                          ANSI_GREY + ESTRELA + ESTRELA + ESTRELA + ESTRELA + ANSI_RESET;
-
-        // Imprime as estrelas coloridas
-        System.out.println(estrelas);
+        // Exibe a caixinha de diálogo (janelinha)
+        JOptionPane.showMessageDialog(
+                null,             // Componente pai (null para centralizar na tela)
+                mensagemHtml,     // A mensagem com o HTML estruturado
+                "Feedback",       // Título da janela
+                JOptionPane.PLAIN_MESSAGE // Tipo de mensagem (sem ícones de erro/aviso de fábrica)
+        );
 	}
 
 }
